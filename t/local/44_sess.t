@@ -14,13 +14,13 @@ use English qw( $EVAL_ERROR $OSNAME $PERL_VERSION -no_match_vars );
 if (not can_fork()) {
     plan skip_all => "fork() not supported on this system";
 } else {
-    plan tests => 67;
+    plan tests => 39;
 }
 
 initialise_libssl();
 
 my @rounds = qw(
-    TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 TLSv1.3-num-tickets-ssl
+    TLSv1.2 TLSv1.3 TLSv1.3-num-tickets-ssl
     TLSv1.3-num-tickets-ctx-6 TLSv1.3-num-tickets-ctx-0
 );
 

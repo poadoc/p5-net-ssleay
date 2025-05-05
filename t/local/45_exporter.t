@@ -15,12 +15,12 @@ if (not can_fork()) {
 } elsif (!defined &Net::SSLeay::export_keying_material) {
     plan skip_all => "No export_keying_material()";
 } else {
-    plan tests => 37;
+    plan tests => 19;
 }
 
 initialise_libssl();
 
-my @rounds = qw( TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 );
+my @rounds = qw( TLSv1.2 TLSv1.3 );
 
 my %usable =
     map {
